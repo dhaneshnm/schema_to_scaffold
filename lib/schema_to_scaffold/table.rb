@@ -20,9 +20,9 @@ module SchemaToScaffold
         puts "Table \n\n\n #{self.inspect} \n\n\n"
         puts "\n ---------------------------------------------"
       end
-      return nil if (name.name.singularize  == name)
+      return nil if (name.singularize  == name)
       script = []
-      script << "rails generate #{target} #{modelize name} #{attributes_list}"
+      script << "rails generate model  #{modelize name} #{attributes_list}"
       script << " --no-migration" unless migragion_flag
       script << "\n\n"
       return script
